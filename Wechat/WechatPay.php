@@ -159,12 +159,13 @@ class WechatPay {
      * @param string $goods_tag 商品标记，代金券或立减优惠功能的参数
      * @return bool|string
      */
-    public function getPrepayId($openid, $body, $out_trade_no, $total_fee, $notify_url, $trade_type = "JSAPI", $goods_tag = null) {
+    public function getPrepayId($openid, $body, $out_trade_no, $total_fee, $notify_url, $attach='', $trade_type = "JSAPI", $goods_tag = null) {
         $postdata = array(
             "body"             => $body,
             "out_trade_no"     => $out_trade_no,
             "total_fee"        => $total_fee,
             "notify_url"       => $notify_url,
+            "attach"           => $attach,
             "trade_type"       => $trade_type,
             "spbill_create_ip" => Tools::getAddress()
         );
